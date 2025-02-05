@@ -70,6 +70,7 @@ object Main {
     // Read updated data
     val updatedDF = spark.read.format("hudi").load(basePath)
     updatedDF.show()
+    val hudiDF1 = spark.read.format("hudi").load(basePath)
 
     // Stop Spark Session
     spark.stop()
