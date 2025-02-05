@@ -70,7 +70,7 @@ object Main {
     // Read updated data
     val updatedDF = spark.read.format("hudi").load(basePath)
     updatedDF.show()
-    val hudiDF1 = spark.read.format("hudi").load(basePath)
+    val newdf= updatedDF.withColumn("region",when(col("region")==="NY","CA").otherwise(col("region")))
 
     // Stop Spark Session
     spark.stop()
