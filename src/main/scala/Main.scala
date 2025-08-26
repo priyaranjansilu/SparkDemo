@@ -53,7 +53,7 @@ object Main {
     // Read from Hudi
     val hudiDF = spark.read.format("hudi").load(basePath)
     hudiDF.show()
-    println("hello")
+    println("hello1")
     // Update data
     val updatedData = Seq(
       ("1", "2024-02-05", "NY", 150), // Update trip_id = 1
